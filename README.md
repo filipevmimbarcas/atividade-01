@@ -36,7 +36,7 @@ Certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
 Primeiro, clone o repositório para sua máquina local e navegue até o diretório do projeto:
 
 ```bash
-git clone [https://github.com/filipevmimbarcas/atividade-01.git](https://github.com/filipevmimbarcas/atividade-01.git) 
+git clone https://github.com/filipevmimbarcas/atividade-01.git
 cd atividade-01
 
 ```
@@ -53,13 +53,18 @@ docker-compose up --build -d
 - d: Inicia os containers em modo "detached" (em segundo plano).
 
 ### 3.Verificar status dos containers
+Para confirmar que todos os containers estão rodando corretamente, execute:
 
 ```bash
 docker-compose ps
 ```
 
 ### 4. Acessar a aplicação
-
-`http://localhost:5000/visitas`
+```bash
+http://localhost:5000/visitas
+```
 
 Você deverá ver uma resposta JSON indicando o número total de visitas, por exemplo: {"total_visitas":1}. Cada vez que você atualizar a página, o contador de visitas no banco de dados aumentará.
+
+
+![app-flask](https://github.com/user-attachments/assets/6e53e01b-b83e-4436-bae1-7d711616bf51)
