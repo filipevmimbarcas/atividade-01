@@ -20,7 +20,7 @@
 
 ---
 
-## 🚀 Como Executar a Aplicação
+## Como Executar a Aplicação
 
 Siga os passos abaixo para colocar a aplicação em funcionamento em sua máquina local.
 
