@@ -61,7 +61,7 @@ docker-compose ps
 
 ### 4. Acessar a aplicação
 ```bash
-http://localhost:5000/visitas
+http://localhost:5000/visitantes
 ```
 
 Você deverá ver uma resposta JSON indicando o número total de visitas, por exemplo: {"total_visitas":1}. Cada vez que você atualizar a página, o contador de visitas no banco de dados aumentará.
