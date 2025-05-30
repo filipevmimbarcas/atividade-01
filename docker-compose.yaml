@@ -1,0 +1,38 @@
+
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    container_name: db_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: db-app
+      POSTGRES_USER: aluno
+      POSTGRES_PASSWORD: senac2010
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: app_flask
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      db-app: db-app
+      aluno: aluno
+      senac2010: senac2010
+      db-postgres: db
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aluno -d db-app"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data: 
